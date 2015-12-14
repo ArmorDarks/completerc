@@ -53,7 +53,7 @@ Features
 Compatibility notes
 -------------------
 
-This hak can be used Instead of DOA City/Rural 2.1 + LOK XP1&2. If your areas was build with DOA City/Rural 2.1 + LOK XP1&2, just remove it and add instead of it CompleteRC.hak. Thanks to @virusman all should work properly
+This hak can be used Instead of DOA City/Rural 2.1 + LOK XP1&2. If your areas was build with DOA City/Rural 2.1 + LOK XP1&2, just remove it and add instead of it CompleteRC.hak. Thanks to [virusman](https://github.com/virusman) all should work properly
 
 
 Haks order
@@ -152,7 +152,7 @@ For help to:
 
 * Helvene
 * lord rosenkrantz
-* @virusman
+* [virusman](https://github.com/virusman)
 
 For help in finding of useful content for hak:
 

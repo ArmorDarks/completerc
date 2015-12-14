@@ -31,7 +31,7 @@
 ## 0.982
 * Added cobble edges as groups
 * Now hak compatible with 1.69 patch
-* Set file have been remade by @virusman. Some things was corrected and now it fully compatible with DOA DOA City/Rural 2.1 + LOK XP1&2 (see compatibility notes for more info)
+* Set file have been remade by [virusman](https://github.com/virusman). Some things was corrected and now it fully compatible with DOA DOA City/Rural 2.1 + LOK XP1&2 (see compatibility notes for more info)
 * **NOT compatible with 0.98**. Sorry for that, but it is better to fix it now than deal with bugs in future
 
 ## 0.98
