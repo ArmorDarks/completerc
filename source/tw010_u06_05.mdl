@@ -678,8 +678,8 @@ node trimesh box01
   alpha 1
   transparencyhint 0
   center undefined
-  ambient 1 1 1
-  diffuse 1 1 1
+  ambient 0.509804 0.509804 0.509804
+  diffuse 0.392157 0.392157 0.392157
   specular 0 0 0
   shininess 11
   selfillumcolor 0 0 0
@@ -729,8 +729,8 @@ node trimesh box03
   alpha 1
   transparencyhint 0
   center undefined
-  ambient 1 1 1
-  diffuse 1 1 1
+  ambient 0.509804 0.509804 0.509804
+  diffuse 0.392157 0.392157 0.392157
   specular 0 0 0
   shininess 11
   selfillumcolor 0 0 0

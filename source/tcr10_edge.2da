@@ -113,3 +113,9 @@
 109    Water       CtyBrdg  Water       0          mda07_b08_99   
 110    Grass      CtyStnBrdg  Grass      0          mda07_c03_99   
 111    Water       CtyStnBrdg  Water       0          mda07_d08_99   
+112    Water       CovBridgeR   Water       0          mda08a_k02_99   
+113    Water       CovBridge   Water       0          mda08a_k12_99   
+114    Water       Stonebridge   Water       0          tgr02_b01_02   
+115     Fields  ****       Fields  0          ttr10_doa_f4     
+116    Fields  ****      Grass  0          ttr10_doa_f5    
+107     Fields    ****       ****            0     ttr10_doa_f4 
