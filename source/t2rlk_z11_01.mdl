@@ -1,0 +1,49 @@
+#Exported from 3ds max by MDL Plug-in Suite 1.0b
+#http://www.bricksbuilder.com/nwn/utils/
+#MAXMODEL ASCII
+# model: t2rlk_Z11_01
+filedependancy Dec15a.max
+newmodel t2rlk_Z11_01
+setsupermodel t2rlk_Z11_01 NULL
+classification Tile
+setanimationscale 1.0
+#MAXGEOM  ASCII
+beginmodelgeom t2rlk_Z11_01
+node dummy t2rlk_Z11_01
+  parent NULL
+endnode
+node trimesh plane
+  parent t2rlk_Z11_01
+  position 0 0 3.19
+  orientation 0 0 0 0
+  wirecolor 0.542969 0.542969 0.542969
+  ambient 0 0 0
+  diffuse 0 0 0
+  specular 0 0 0
+  shininess 1
+  bitmap ttr01_black00
+  verts 4
+    -5 5 0.0100001
+    -5 -5 0.0100001
+    5 5 0.0100001
+    5 -5 0.0100001
+  faces 2
+    0 1 2  1  0 1 2  0
+    3 2 1  1  3 2 1  0
+  tverts 4
+    -244.5 262.279 0
+    -244.5 252.279 0
+    -234.5 262.279 0
+    -234.5 252.279 0
+endnode
+node dummy t2rlk_Z11_01a
+  parent t2rlk_Z11_01
+  position 0 0 0
+  orientation 0 0 0 0
+  wirecolor 0.542969 0.542969 0.542969
+endnode
+endmodelgeom t2rlk_Z11_01
+donemodel t2rlk_Z11_01
+
+
+

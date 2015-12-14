@@ -1,0 +1,41 @@
+#MAXMODEL ASCII
+# model: t2rlk_Z13_01
+filedependancy t2rlk_Z13_01.max
+newmodel t2rlk_Z13_01
+setsupermodel t2rlk_Z13_01 NULL
+classification tile
+setanimationscale 1
+#MAXGEOM  ASCII
+beginmodelgeom t2rlk_Z13_01
+node dummy t2rlk_Z13_01
+  parent NULL
+  #part-number 0
+endnode
+node trimesh Object592
+  parent t2rlk_Z13_01
+  #part-number 1
+  ambient 0 0 0
+  diffuse 0 0 0
+  specular 0 0 0
+  shininess 26
+  bitmap ttf01_black
+  verts 4
+    -5 5 0
+    -5 -5 0
+    5 -5 0
+    5 5 0
+  tverts 5
+    0.0371593982 0.892077982 0
+    0.0530786999 0.856760025 0
+    0.0530786999 0.92811501 0
+    0.0267891996 0.92811501 0
+    0.0252858009 0.913039982 0
+  faces 2
+    0 1 2 1 0 1 2 3
+    2 3 0 1 2 3 4 3
+  position 0 0 -6
+  orientation 0 0 0 0
+endnode
+endmodelgeom t2rlk_Z13_01
+
+donemodel t2rlk_Z13_01

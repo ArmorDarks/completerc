@@ -1,0 +1,56 @@
+# Exported from NWmax 0.5-beta at 3/23/2004 2:22:29 PM
+# pwk file
+#
+#NWmaxPWKMESH  ASCII
+node trimesh walkmesh
+  parent Dummy01
+  position 0.015013 -0.223158 0.0
+  orientation 1.0 0.0 0.0 0.0
+  wirecolor 0.52549 0.431373 0.0313726 
+  multimaterial 20
+    NULL
+    NULL
+    NULL
+    NULL
+    NULL
+    NULL
+    NULL
+    NULL
+    NULL
+    NULL
+    NULL
+    NULL
+    NULL
+    NULL
+    NULL
+    NULL
+    NULL
+    NULL
+    NULL
+    NULL
+  ambient 0.0 0.0 0.0 
+  diffuse 0.705882 0.0 1.0 
+  specular 0.0 0.0 0.0 
+  shininess 11.0
+  selfillumcolor 0.0 0.0 0.0 
+    bitmap NULL
+    verts 9
+     -0.799478 -0.507627 0.0
+     0.0 -0.77892 0.0
+     0.548081 -0.451258 0.0
+     -1.03872 0.0 0.0
+     0.0 0.0 0.0
+     1.06306 0.0569627 0.0
+     -1.03872 0.910066 0.0
+     -0.290082 0.814358 0.0
+     0.826706 0.828009 0.0
+    faces 8
+     3 0 4  1  0 0 0  7
+     1 4 0  1  0 0 0  7
+     4 1 5  1  0 0 0  7
+     2 5 1  1  0 0 0  7
+     6 3 7  1  0 0 0  7
+     4 7 3  1  0 0 0  7
+     7 4 8  1  0 0 0  7
+     5 8 4  1  0 0 0  7
+endnode
