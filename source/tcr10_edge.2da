@@ -124,4 +124,7 @@
 110     WoodFort        ****       Grass    0          tbf04g_z16_01
 111    Grass+    ****       gbldinggrass           0     tcn01_z15_01 
 112    Grass+    ****       Building           0     tcn01_z15_01 
-  
+113    Grass       ContCobble       Grass       0          tcn01_z01_01
+114    Grass+      ContCobble       Grass      0          tcn01_z14_01
+115    Grass+      ContCobble     Water       0          tcn01_z16_01
+116    Grass       ContCobble       Water       0          tcn01_z13_01
