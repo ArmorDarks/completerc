@@ -1,0 +1,142 @@
+# Rewritten by CleanModels 3 Version 3.1.1c Thu Jul 03 00:39:20 2008
+#MAXMODEL ASCII
+filedependency Unknown
+newmodel tw010_a01_93
+setsupermodel tw010_a01_93 null
+setanimationscale 1
+classification TILE
+#MAXGEOM ASCII
+beginmodelgeom tw010_a01_93
+node dummy tw010_a01_93
+  parent NULL
+endnode
+node light tw010_a01_93ml2
+  parent tw010_a01_93
+  wirecolor 1 1 1
+  radius 5
+  multiplier 1
+  color 1 1 1
+  ambientonly 0
+  ndynamictype 0
+  affectdynamic 1
+  shadow 0
+  lightpriority 5
+  fadinglight 0
+  orientation 0 0 0 0
+  position -2.14 -3.99 12.91
+endnode
+node aabb walkmesh
+  parent tw010_a01_93
+  wirecolor 1 1 1
+  ambient 1 1 1
+  diffuse 0 0.501961 0
+  specular 0 0 0
+  shininess 11
+  selfillumcolor 0 0 0
+  orientation 0 0 0 0
+  bitmap NULL
+  position 0 0 0
+  verts 11
+    -5 5 0
+    -5 -5 0
+    5 5 0
+    5 -5 0
+    -0.97 0 0
+    0 5 0
+    0 -5 0
+    0.94 5 0
+    1.19 -3.81 0
+    0.29 1.67 0
+    0.08 0 0
+  faces 13
+    0 4 5 1 0 0 0 3
+    8 4 6 1 0 0 0 1
+    0 1 4 1 0 0 0 3
+    5 4 9 1 0 0 0 1
+    3 8 6 1 0 0 0 1
+    10 2 4 1 0 0 0 1
+    6 4 1 1 0 0 0 3
+    9 4 2 1 0 0 0 1
+    10 4 8 1 0 0 0 3
+    7 9 2 1 0 0 0 1
+    5 9 7 1 0 0 0 3
+    3 10 8 1 0 0 0 1
+    3 2 10 1 0 0 0 1
+  aabb     -5 -5 0 5 5 0 -1
+    -5 -5 0 1.19 5 0 -1
+    -5 -5 0 1.19 0 0 -1
+    -5 -5 0 0 0 0 6
+    -0.97 -5 0 1.19 0 0 -1
+    -0.97 -5 0 1.19 0 0 1
+    -0.97 -3.81 0 1.19 0 0 8
+    -5 -5 0 0.29 5 0 -1
+    -5 -5 0 -0.97 5 0 2
+    -5 0 0 0.29 5 0 -1
+    -5 0 0 0 5 0 0
+    -0.97 0 0 0.29 5 0 3
+    -0.97 -5 0 5 5 0 -1
+    0 -5 0 5 5 0 -1
+    0 -5 0 5 0 0 -1
+    0 -5 0 5 -3.81 0 4
+    0.08 -5 0 5 0 0 11
+    0.08 -5 0 5 5 0 12
+    -0.97 0 0 5 5 0 -1
+    0 1.67 0 0.94 5 0 10
+    -0.97 0 0 5 5 0 -1
+    -0.97 0 0 5 5 0 -1
+    -0.97 0 0 5 5 0 5
+    -0.97 0 0 5 5 0 7
+    0.29 1.67 0 5 5 0 9
+endnode
+node trimesh boden
+  parent tw010_a01_93
+  orientation 0 0 0 0
+  wirecolor 1 1 1
+  tilefade 0
+  scale 1
+  render 1
+  shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1
+  transparencyhint 0
+  center 0 0 0
+  ambient 1 1 1
+  diffuse 1 1 1
+  specular 0 0 0
+  shininess 12
+  selfillumcolor 0 0 0
+  bitmap tw010_bodgras01
+  position 0 0 0
+  verts 4
+    -5 -5 0
+    5 -5 0
+    5 5 0
+    -5 5 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 0 2 1 3 0 2 1
+  tverts 4
+    0.000499517 0.000499755 0
+    0.9995 0.000499517 0
+    0.999501 0.9995 0
+    0.000499755 0.999501 0
+endnode
+node light tw010_a01_93ml1
+  parent tw010_a01_93
+  wirecolor 1 1 1
+  radius 14
+  multiplier 1
+  color 1 1 1
+  ambientonly 0
+  ndynamictype 0
+  affectdynamic 1
+  shadow 0
+  lightpriority 5
+  fadinglight 0
+  orientation 0 0 0 0
+  position 3.1 2.77 6.21
+endnode
+endmodelgeom tw010_a01_93
+donemodel tw010_a01_93

@@ -1,0 +1,234 @@
+# Rewritten by CleanModels 3 Version 3.1.1c Thu Jul 03 00:45:07 2008
+#MAXMODEL ASCII
+filedependency Unknown
+newmodel tw010_o13_03
+setsupermodel tw010_o13_03 null
+setanimationscale 1
+classification TILE
+#MAXGEOM ASCII
+beginmodelgeom tw010_o13_03
+node dummy tw010_o13_03
+  parent NULL
+endnode
+node trimesh plane02
+  parent tw010_o13_03
+  orientation 0 0 0 0
+  wirecolor 0.87451 0.337255 0.337255
+  tilefade 0
+  scale 1
+  render 1
+  shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1
+  transparencyhint 0
+  center 0 2.45571e-005 0
+  ambient 1 1 1
+  diffuse 1 1 1
+  specular 0 0 0
+  shininess 3
+  selfillumcolor 0 0 0
+  bitmap tw010_mauer03a
+  position 0 -5 2
+  verts 3
+    4 0 2
+    -4 0 -2
+    4 0 -2
+  faces 1
+    1 2 0 1 1 2 0 1
+  tverts 3
+    1.999 0.9995 0
+    0.000999153 0.000500083 0
+    1.999 0.000499547 0
+endnode
+node trimesh plane01
+  parent tw010_o13_03
+  orientation 0 0 0 0
+  wirecolor 0.87451 0.337255 0.337255
+  tilefade 0
+  scale 1
+  render 1
+  shadow 0
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1
+  transparencyhint 0
+  center 0 -3.05176e-005 0
+  ambient 1 1 1
+  diffuse 1 1 1
+  specular 0 0 0
+  shininess 3
+  selfillumcolor 0 0 0
+  bitmap tw010_mauer03a
+  position 0 5 2
+  verts 3
+    4 0 2
+    4 0 -2
+    -4 0 -2
+  faces 1
+    1 2 0 1 1 2 0 1
+  tverts 3
+    1.999 0.9995 0
+    1.999 0.000499606 0
+    0.000999212 0.000500023 0
+endnode
+node aabb walkmesh
+  parent tw010_o13_03
+  wirecolor 1 1 1
+  ambient 1 1 1
+  diffuse 1 1 1
+  specular 0 0 0
+  shininess 11
+  selfillumcolor 0 0 0
+  orientation 0 0 0 0
+  bitmap NULL
+  position 0 0 0
+  verts 8
+    4.0 5 4.0
+    5 5 4.0
+    4.0 -5 4.0
+    5 -5 4.0
+    -4.0 -5 0
+    -5 -5 0
+    -5 5 0
+    -4.0 5 0
+  faces 6
+    0 2 1 1 0 0 0 4
+    3 1 2 1 0 0 0 4
+    6 5 4 1 0 0 0 4
+    6 4 7 1 0 0 0 4
+    7 4 2 2 0 0 0 4
+    2 0 7 2 0 0 0 4
+  aabb     -5 -5 0 5 5 4.0 -1
+    -5 -5 0 4.0 5 4.0 -1
+    -5 -5 0 4.0 5 4.0 -1
+    -5 -5 0 -4.0 5 0 2
+    -4.0 -5 0 4.0 5 4.0 4
+    -5 -5 0 -4.0 5 0 3
+    -4.0 -5 0 5 5 4.0 -1
+    4.0 -5 4.0 5 5 4.0 1
+    -4.0 -5 0 5 5 4.0 -1
+    -4.0 -5 0 4.0 5 4.0 5
+    4.0 -5 4.0 5 5 4.0 0
+endnode
+node trimesh boden
+  parent tw010_o13_03
+  orientation 0 0 0 0
+  wirecolor 1 1 1
+  tilefade 0
+  scale 1
+  render 1
+  shadow 1
+  beaming 0
+  inheritcolor 0
+  rotatetexture 0
+  alpha 1
+  transparencyhint 0
+  center -417 -255 199
+  ambient 1 1 1
+  diffuse 1 1 1
+  specular 0 0 0
+  shininess 3
+  selfillumcolor 0 0 0
+  bitmap tcn01_cobb03
+  position 0 0 0
+  verts 20
+    4.0 5.0 4.0
+    5.0 5.0 4.0
+    4.0 0 4.0
+    4.0 -5.0 4.0
+    5.0 -5.0 4.0
+    5.0 0 4.0
+    -4.0 0 0
+    -4.0 -5.0 0
+    -1.33 0 1.33
+    -1.33 -5.0 1.33
+    1.33 0 2.67
+    0.6 -5.0 2.3
+    3.73 -5.0 3.87
+    -5.0 -5.0 0
+    -5.0 5.0 0
+    -4.0 5.0 0
+    -5.0 0 0
+    -1.33 5.0 1.33
+    0.6 5.0 2.3
+    3.73 5.0 3.87
+  faces 22
+    2 3 4 1 2 3 4 1
+    5 1 2 1 5 1 2 1
+    6 7 8 2 6 7 8 1
+    9 8 7 2 9 8 7 1
+    8 9 10 2 8 9 10 1
+    11 10 9 2 11 10 9 1
+    10 11 2 2 10 11 2 1
+    3 2 12 2 3 2 12 1
+    0 2 1 1 0 2 1 1
+    4 5 2 1 4 5 2 1
+    14 16 15 1 14 16 15 1
+    16 13 7 1 16 13 7 1
+    16 6 15 1 16 6 15 1
+    16 7 6 1 16 7 6 1
+    12 2 11 2 12 2 11 1
+    15 6 8 2 15 6 8 1
+    8 17 15 2 8 17 15 1
+    17 8 10 2 17 8 10 1
+    10 18 17 2 10 18 17 1
+    18 10 2 2 18 10 2 1
+    2 0 19 2 2 0 19 1
+    2 19 18 2 2 19 18 1
+  tverts 20
+    1.7992 1.999 0
+    1.999 1.999 0
+    1.7992 1 0
+    1.7992 0.000998974 0
+    1.999 0.000998914 0
+    1.999 1 0
+    0.2008 1 0
+    0.200799 0.000999331 0
+    0.734266 1 0
+    0.734266 0.000999212 0
+    1.26573 1 0
+    1.11988 0.000999153 0
+    1.74525 0.000998974 0
+    0.000999153 0.000999391 0
+    0.000999629 1.999 0
+    0.2008 1.999 0
+    0.000999391 1 0
+    0.734266 1.999 0
+    1.11988 1.999 0
+    1.74525 1.999 0
+endnode
+node light tw010_o13_03ml1
+  parent tw010_o13_03
+  wirecolor 1 1 1
+  radius 14
+  multiplier 1
+  color 0 0 0
+  ambientonly 0
+  ndynamictype 0
+  affectdynamic 1
+  shadow 0
+  lightpriority 5
+  fadinglight 0
+  orientation 0 0 0 0
+  position 0 0 9
+endnode
+node light tw010_o13_03ml2
+  parent tw010_o13_03
+  wirecolor 1 1 1
+  radius 5
+  multiplier 1
+  color 0.00392157 0.00392157 0.00392157
+  ambientonly 0
+  ndynamictype 0
+  affectdynamic 1
+  shadow 0
+  lightpriority 5
+  fadinglight 0
+  orientation 0 0 0 0
+  position 0 -3.99 7.61
+endnode
+endmodelgeom tw010_o13_03
+donemodel tw010_o13_03

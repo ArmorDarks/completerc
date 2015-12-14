@@ -1,0 +1,94 @@
+# Rewritten by CleanModels 3 Version 3.1.1c Thu Jul 03 00:39:20 2008
+#MAXMODEL ASCII
+filedependency Unknown
+newmodel tw010_a01_98
+setsupermodel tw010_a01_98 null
+setanimationscale 1
+classification TILE
+#MAXGEOM ASCII
+beginmodelgeom tw010_a01_98
+node dummy tw010_a01_98
+  parent NULL
+endnode
+node aabb walkmesh
+  parent tw010_a01_98
+  ambient 0.8 0.8 0.8
+  diffuse 0.6 0.34 0.16
+  specular 0 0 0
+  shininess 11
+  shadow 0
+  transparencyhint 0
+  bitmap NULL
+  orientation 0 0 0 0
+  alpha 1
+  position 0 0 0
+  verts 4
+    -5 5 0
+    -5 -5 0
+    5 5 0
+    5 -5 0
+  faces 2
+    0 1 2 1 0 0 0 1
+    3 2 1 1 0 0 0 1
+  aabb     -5 -5 0 5 5 0 -1
+    -5 -5 0 5 5 0 0
+    -5 -5 0 5 5 0 1
+endnode
+node trimesh boden
+  parent tw010_a01_98
+  ambient 1 1 1
+  diffuse 1 1 1
+  specular 0 0 0
+  shininess 11
+  shadow 0
+  bitmap tw010_boden01
+  orientation 0 0 0 0
+  scale 1
+  alpha 1
+  position 0 0 0
+  verts 4
+    -5 -5 0
+    5 -5 0
+    5 5 0
+    -5 5 0
+  faces 2
+    0 1 2 1 0 1 2 1
+    3 0 2 1 3 0 2 1
+  tverts 4
+    -2.38419e-007 1.78814e-007 0
+    2 -2.38419e-007 0
+    2 2 0
+    1.78814e-007 2 0
+endnode
+node light tw010_a01_98ml2
+  parent tw010_a01_98
+  ambientonly 0
+  shadow 0
+  isdynamic 0
+  affectdynamic 1
+  lightpriority 5
+  fadinglight 0
+  flareradius 0
+  orientation 0 0 0 0
+  color 1 1 1
+  radius 5
+  multiplier 1
+  position -2.14 -3.99 12.91
+endnode
+node light tw010_a01_98ml1
+  parent tw010_a01_98
+  ambientonly 0
+  shadow 0
+  isdynamic 0
+  affectdynamic 1
+  lightpriority 5
+  fadinglight 0
+  flareradius 0
+  orientation 0 0 0 0
+  color 1 1 1
+  radius 14
+  multiplier 1
+  position 3.1 2.77 6.21
+endnode
+endmodelgeom tw010_a01_98
+donemodel tw010_a01_98
