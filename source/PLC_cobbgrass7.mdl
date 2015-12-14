@@ -1,65 +1,44 @@
-#Exported from 3ds max by MDL Plug-in Suite 1.0b
-#http://www.bricksbuilder.com/nwn/utils/
+# Rewritten by CleanModels 3 Version 3.1.1c Thu Jul 03 01:21:21 2008
 #MAXMODEL ASCII
-# model: PLC_cobbgrass7
-filedependancy cobble_leaves_grass.max
-newmodel PLC_cobbgrass7
-setsupermodel PLC_cobbgrass7 NULL
-classification Tile
-setanimationscale 1.0
-#MAXGEOM  ASCII
-beginmodelgeom PLC_cobbgrass7
-node dummy PLC_cobbgrass7
+filedependency Unknown
+newmodel plc_cobbgrass7
+setsupermodel plc_cobbgrass7 null
+setanimationscale 1
+classification TILE
+#MAXGEOM ASCII
+beginmodelgeom plc_cobbgrass7
+node dummy plc_cobbgrass7
   parent NULL
 endnode
-node trimesh Plane01
-  parent PLC_cobbgrass7
-  position 0 0 0.01
+node trimesh plane01
+  parent plc_cobbgrass7
   orientation 0 0 0 0
   wirecolor 0.695313 0.695313 0.695313
   ambient 1 1 1
   diffuse 1 1 1
   specular 0 0 0
   shininess 10
-  bitmap PLC_cobbgrass
+  bitmap plc_cobbgrass
   render 1
-  Shadow 0
+  shadow 0
   beaming 0
   transparencyhint 0
   tilefade 0
   rotatetexture 0
+  position 0 0 0.01
   verts 4
-    1.25 0.625 0
-    -1.25 0.625 0
-    1.25 -0.625 0
-    -1.25 -0.625 0
+    1.25 0.63 0
+    -1.25 0.63 0
+    1.25 -0.63 0
+    -1.25 -0.63 0
   faces 2
-    2 0 3  1  12 9 13  0
-    1 3 0  1  10 13 9  0
-  tverts 23
-    0 0 0
-    0.25 0 0
-    0.5 0 0
-    0.75 0 0
-    1 0 0
-    0 0 0
+    2 0 3 1 2 0 3 0
+    1 3 0 1 1 3 0 0
+  tverts 4
     0.5 0 0
     1 0 0
-    0 0 0
-    0.5 0 0
-    1 0 0
-    0 0.25 0
     0.5 0.25 0
     1 0.25 0
-    0 0.5 0
-    0.5 0.5 0
-    1 0.5 0
-    0 0.75 0
-    0.5 0.75 0
-    1 0.75 0
-    0 1 0
-    0.5 1 0
-    1 1 0
 endnode
-endmodelgeom PLC_cobbgrass7
-donemodel PLC_cobbgrass7
+endmodelgeom plc_cobbgrass7
+donemodel plc_cobbgrass7

@@ -1,19 +1,17 @@
+# Rewritten by CleanModels 3 Version 3.1.1c Thu Jul 03 00:04:08 2008
 #MAXMODEL ASCII
-# model: t2rlk_Z12_01
-filedependancy t2rlk_Z12_01.max
-newmodel t2rlk_Z12_01
-setsupermodel t2rlk_Z12_01 NULL
-classification tile
+filedependency Unknown
+newmodel t2rlk_z12_01
+setsupermodel t2rlk_z12_01 null
 setanimationscale 1
-#MAXGEOM  ASCII
-beginmodelgeom t2rlk_Z12_01
-node dummy t2rlk_Z12_01
+classification TILE
+#MAXGEOM ASCII
+beginmodelgeom t2rlk_z12_01
+node dummy t2rlk_z12_01
   parent NULL
-  #part-number 0
 endnode
-node trimesh Object685
-  parent t2rlk_Z12_01
-  #part-number 1
+node trimesh object685
+  parent t2rlk_z12_01
   ambient 0 0 0
   diffuse 0 0 0
   specular 0 0 0
@@ -21,29 +19,28 @@ node trimesh Object685
   shadow 0
   tilefade 2
   bitmap ttf01_black
+  orientation 0 0 0 0
+  alpha 1
+  scale 1
+  selfillumcolor 0 0 0
+  position 0 0 3
   verts 4
     -5 5 0
     -5 -5 0
     5 -5 0
     5 5 0
-  tverts 5
-    0.0371593982 0.892077982 0
-    0.0530786999 0.856760025 0
-    0.0530786999 0.92811501 0
-    0.0267891996 0.92811501 0
-    0.0252858009 0.913039982 0
   faces 2
     0 1 2 1 0 1 2 3
     2 3 0 1 2 3 4 3
-  position 0 0 3
-  orientation 0 0 0 0
-  alpha 1
-  scale 1
-  setfillumcolor 0 0 0
+  tverts 5
+    0.0371594 0.892078 0
+    0.0530787 0.85676 0
+    0.0530787 0.928115 0
+    0.0267892 0.928115 0
+    0.0252858 0.91304 0
 endnode
-node trimesh Object686
-  parent t2rlk_Z12_01
-  #part-number 2
+node trimesh object686
+  parent t2rlk_z12_01
   ambient 0 0 0
   diffuse 0 0 0
   specular 0 0 0
@@ -51,44 +48,38 @@ node trimesh Object686
   shadow 0
   tilefade 4
   bitmap ttf01_black
-  verts 8
-    -5 2.3499999 -10.0299997
-    -5 -7.6500001 -10.0299997
-    -5 -7.6500001 -0.0299999993
-    -5 2.3499999 -0.0299999993
-    5 -7.6500001 -10.0299997
-    5 -7.6500001 -0.0299999993
-    5 2.3499999 -10.0299997
-    5 2.3499999 -0.0299999993
-  tverts 10
-    0.0371593982 0.892077982 0
-    0.0530786999 0.856760025 0
-    0.0530786999 0.856760025 0
-    0.0371593982 0.892077982 0
-    0.0530786999 0.92811501 0
-    0.0530786999 0.92811501 0
-    0.0267891996 0.92811501 0
-    0.0267891996 0.92811501 0
-    0.0252858009 0.913039982 0
-    0.0252858009 0.913039982 0
-  faces 8
-    0 1 2 1 0 1 2 3
-    2 3 0 1 1 0 3 3
-    1 4 5 1 1 4 5 3
-    5 2 1 1 4 1 2 3
-    4 6 7 1 4 6 7 3
-    7 5 4 1 6 4 5 3
-    6 0 3 1 6 8 9 3
-    3 7 6 1 8 6 7 3
-  position 0 2.6500001 13.0299997
   orientation 0 0 0 0
   alpha 1
   scale 1
-  setfillumcolor 0 0 0
+  selfillumcolor 0 0 0
+  position 0 2.65 13.03
+  verts 8
+    -5 2.35 -10.03
+    -5 -7.65 -10.03
+    -5 -7.65 -0.03
+    -5 2.35 -0.03
+    5 -7.65 -10.03
+    5 -7.65 -0.03
+    5 2.35 -10.03
+    5 2.35 -0.03
+  faces 8
+    0 1 2 1 0 1 1 3
+    2 3 0 1 1 0 0 3
+    1 4 5 1 1 2 2 3
+    5 2 1 1 2 1 1 3
+    4 6 7 1 2 3 3 3
+    7 5 4 1 3 2 2 3
+    6 0 3 1 3 4 4 3
+    3 7 6 1 4 3 3 3
+  tverts 5
+    0.0371594 0.892078 0
+    0.0530787 0.85676 0
+    0.0530787 0.928115 0
+    0.0267892 0.928115 0
+    0.0252858 0.91304 0
 endnode
-node trimesh Object591
-  parent t2rlk_Z12_01
-  #part-number 3
+node trimesh object591
+  parent t2rlk_z12_01
   ambient 0 0 0
   diffuse 0 0 0
   specular 0 0 0
@@ -96,26 +87,25 @@ node trimesh Object591
   shadow 0
   tilefade 1
   bitmap ttf01_black
-  verts 4
-    -5 2.3499999 -0.0299999993
-    -5 -7.6500001 -0.0299999993
-    5 -7.6500001 -0.0299999993
-    5 2.3499999 -0.0299999993
-  tverts 5
-    0.0371593982 0.892077982 0
-    0.0530786999 0.856760025 0
-    0.0530786999 0.92811501 0
-    0.0267891996 0.92811501 0
-    0.0252858009 0.913039982 0
-  faces 2
-    0 1 2 1 0 1 2 3
-    2 3 0 1 2 3 4 3
-  position 0 2.6500001 13.0299997
   orientation 0 0 0 0
   alpha 1
   scale 1
-  setfillumcolor 0 0 0
+  selfillumcolor 0 0 0
+  position 0 2.65 13.03
+  verts 4
+    -5 2.35 -0.03
+    -5 -7.65 -0.03
+    5 -7.65 -0.03
+    5 2.35 -0.03
+  faces 2
+    0 1 2 1 0 1 2 3
+    2 3 0 1 2 3 4 3
+  tverts 5
+    0.0371594 0.892078 0
+    0.0530787 0.85676 0
+    0.0530787 0.928115 0
+    0.0267892 0.928115 0
+    0.0252858 0.91304 0
 endnode
-endmodelgeom t2rlk_Z12_01
-
-donemodel t2rlk_Z12_01
+endmodelgeom t2rlk_z12_01
+donemodel t2rlk_z12_01

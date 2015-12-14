@@ -1,23 +1,27 @@
+# Rewritten by CleanModels 3 Version 3.1.1c Wed Jul 02 23:50:48 2008
 #MAXWALKMESH  ASCII
-beginwalkmeshgeom tcr01_X13_01 
-node aabb Groups02930 
-  parent tcr01_X13_01 
-  position 0.0 0.0 -2.0
-  orientation  0.0 0.0 0.0  0.0
-  wirecolor 0.690196 0.101961 0.101961  
-    verts 4
-     5.0 5.0 -4.57764e-007
-     -5.0 5.0 -4.57764e-007
-     -5.0 -5.0 -4.57764e-007
-     5.0 -5.0 -4.57764e-007
-    faces 2
-     2 3 0  1  0 0 0  4
-     1 2 0  1  0 0 0  4
-aabb    -5.00 -5.00 -0.00   5.00  5.00 -0.00  -1
-    -5.00 -5.00 -0.00   5.00  5.00 -0.00  0
-    -5.00 -5.00 -0.00   5.00  5.00 -0.00  1
+beginwalkmeshgeom tcr01_x13_01
+node aabb groups02930
+  parent tcr01_x13_01
+  ambient 0.2 0.2 0.2
+  diffuse 0.8 0.8 0.8
+  specular 0 0 0
+  shininess 1
+  shadow 0
+  transparencyhint 0
+  bitmap NULL
+  orientation 0 0 0 0
+  position 0 0 0
+  verts 4
+    -5 -5 -2
+    5 -5 -2
+    5 5 -2
+    -5 5 -2
+  faces 2
+    0 1 2 1 0 0 0 4
+    3 0 2 1 0 0 0 4
+  aabb     -5 -5 -2 5 5 -2 -1
+    -5 -5 -2 5 5 -2 1
+    -5 -5 -2 5 5 -2 0
 endnode
-endwalkmeshgeom tcr01_X13_01 
-
-
-
+endwalkmeshgeom tcr01_x13_01
