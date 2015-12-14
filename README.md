@@ -1,4 +1,4 @@
-Complete Rural/City — Neverwinter Nights hakpack
+Complete Rural\City — Neverwinter Nights hakpack
 =================================================
 
 Massive _2300+_ tileset. With it you can easily build rural, city, external and interior castle areas by using only one hak.
@@ -50,23 +50,40 @@ Features
 - Special Continuer crosser for cobble. After that crosser all titles that are below edges of the map will become into cobble one. See screenshot from v0.985 if you don't know how to use it properly
 
 
+How to use
+----------
+
+If you're not familiar with Neverwinter Nights:
+
+1. Get Neverwinter Nights: Hordes of Underdark 1.69 somewhere
+2. Create your first character and play main campaign
+3. Get addictive to NWN to that point when you're start to realize that you can't leave without it anymore and you have strong urge to build with NWN Toolset something cool. Then proceed with next part:
+
+If you're familiar with Neverwinter Nights:
+
+1. Get hakpack latest release from [releases](https://github.com/ArmorDarks/completerc/releases) section
+2. Unpack it somewhere
+3. Copy `CompleteRC.hak` from `hak` directory to `Neverwinter Nights\hak` directory
+4. Copy `*.erf` files from `erf` directory to `Neverwinter Nights\erf` directory
+5. Launch NWN Toolset via `nwtoolset.exe`
+6. Create new module or load already existing
+7. Proceed to `Edit` -> `Module Properties`
+8. Switch to `Custom Content` tab
+9. Select `completerc` from list and hit add. This will add new tileset.
+10. If you want hills without shadow issues, but simplier — also add `completercshr` and move it _above_ `completerc`
+11. Hit `ok`
+12. Proceed to `File` -> `Import` and select 4 copied to `erf` files. You will need to repeat it four times for each file. It will load new placeables into palette.
+13. You're ready to build!
+
+To create new area which will use this tileset use `Wizards` -> `Area Wizard` and during creation select `+ Complete Rural\City`
+
+Hackpack-related placeables will appear in `Palette` -> `Placeables` -> `Custom` tab -> `#Hackpack Placeables`.
+
+
 Compatibility notes
 -------------------
 
 This hak can be used Instead of DOA City/Rural 2.1 + LOK XP1&2. If your areas was build with DOA City/Rural 2.1 + LOK XP1&2, just remove it and add instead of it CompleteRC.hak. Thanks to [virusman](https://github.com/virusman) all should work properly
-
-
-Haks order
-----------
-
-* Top — hotfixes
-* Middle — addons
-* Bottom — core hak
-
-### Currently:
-
-* `CompleteRCshr.hak` (optional)
-* `CompleteRC.hak`
 
 
 Known bug
