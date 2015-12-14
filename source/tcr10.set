@@ -34049,7 +34049,7 @@ DoorVisibilityOrientation=90
 ImageMap2D=MITW010_7
 
 [TILE1114DOOR0]
-Type=181
+Type=135
 X=0.41
 Y=0.00
 Z=0.46
@@ -34086,7 +34086,7 @@ DoorVisibilityOrientation=90
 ImageMap2D=MITW010_9
 
 [TILE1115DOOR0]
-Type=181
+Type=135
 X=0.41
 Y=0.00
 Z=0.46
@@ -34123,7 +34123,7 @@ DoorVisibilityOrientation=0
 ImageMap2D=MITW010_7
 
 [TILE1116DOOR0]
-Type=181
+Type=135
 X=0.41
 Y=0.00
 Z=0.46
@@ -34316,7 +34316,7 @@ DoorVisibilityOrientation=90
 ImageMap2D=MITW010_7
 
 [TILE1122DOOR0]
-Type=181
+Type=135
 X=0.41
 Y=0.00
 Z=0.46
@@ -36201,7 +36201,7 @@ DoorVisibilityOrientation=90
 ImageMap2D=MITW010_19
 
 [TILE1186DOOR0]
-Type=181
+Type=135
 X=0.41
 Y=0.00
 Z=0.46
@@ -36238,7 +36238,7 @@ DoorVisibilityOrientation=90
 ImageMap2D=MITW010_19
 
 [TILE1187DOOR0]
-Type=181
+Type=135
 X=0.41
 Y=0.00
 Z=0.46
@@ -53996,7 +53996,7 @@ DoorVisibilityOrientation=0
 ImageMap2D=MITW010_7
 
 [TILE1794DOOR0]
-Type=181
+Type=135
 X=0.15
 Y=0.00
 Z=0.46
@@ -54033,7 +54033,7 @@ DoorVisibilityOrientation=90
 ImageMap2D=MITW010_19
 
 [TILE1795DOOR0]
-Type=181
+Type=135
 X=0.41
 Y=0.00
 Z=0.46
@@ -54070,7 +54070,7 @@ DoorVisibilityOrientation=90
 ImageMap2D=MITW010_19
 
 [TILE1796DOOR0]
-Type=181
+Type=135
 X=0.41
 Y=0.00
 Z=0.46
@@ -54181,14 +54181,14 @@ DoorVisibilityOrientation=90
 ImageMap2D=MITW010_9
 
 [TILE1799DOOR0]
-Type=181
+Type=135
 X=4.4
 Y=0.00
 Z=0.46
 Orientation=90.0
 
 [TILE1799DOOR1]
-Type=185
+Type=139
 X=-2.7
 Y=0.00
 Z=0.0
@@ -65411,7 +65411,7 @@ VisibilityOrientation=0
 ImageMap2D=mida07_k01
 
 [TILE2170DOOR0]
-Type=192
+Type=146
 X=0.0
 Y=0.0
 Z=5.5
@@ -65448,7 +65448,7 @@ VisibilityOrientation=0
 ImageMap2D=mida07_k02
 
 [TILE2171DOOR0]
-Type=192
+Type=146
 X=0.0
 Y=0.0
 Z=5.5
