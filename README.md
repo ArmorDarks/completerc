@@ -57,7 +57,7 @@ If you're not familiar with Neverwinter Nights:
 
 1. Get Neverwinter Nights: Hordes of Underdark 1.69 somewhere
 2. Create your first character and play main campaign
-3. Get addictive to NWN to that point when you're start to realize that you can't leave without it anymore and you have strong urge to build with NWN Toolset something cool. Then proceed with next part:
+3. Get addictive to NWN to the point when you will realize that you can't leave without NWN and you have strong urge to build with something cool NWN Toolset. Then proceed to next part:
 
 If you're familiar with Neverwinter Nights:
 
@@ -70,7 +70,7 @@ If you're familiar with Neverwinter Nights:
 7. Proceed to `Edit` -> `Module Properties`
 8. Switch to `Custom Content` tab
 9. Select `completerc` from list and hit add. This will add new tileset.
-10. If you want hills without shadow issues, but simplier — also add `completercshr` and move it _above_ `completerc`
+10. If you want hills without shadow issues, but simpler — add `completercshr` and move it _above_ `completerc`
 11. Hit `ok`
 12. Proceed to `File` -> `Import` and select 4 copied to `erf` files. You will need to repeat it four times for each file. It will load new placeables into palette.
 13. You're ready to build!
