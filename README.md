@@ -1,4 +1,4 @@
-Complete Rural/City — Neverwinter Nights hackpack
+Complete Rural/City — Neverwinter Nights hakpack
 =================================================
 
 Massive _2300+_ tileset. With it you can easily build rural, city, external and interior castle areas by using only one hak.
