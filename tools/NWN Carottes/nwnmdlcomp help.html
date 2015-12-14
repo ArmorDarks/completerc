@@ -1,0 +1,184 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>What is NwnMdlComp</title>
+</head>
+
+<body>
+
+<h3>What is NwnMdlComp?</h3>
+<p>NwnMdlComp is a model compiler and decompiler for Bioware's Neverwinter
+Nights game. It allows content providers to extract binary models from NWN and
+convert them to human readable ASCII format.&nbsp; The ASCII format is the
+format commonly supported by model editing plugins.&nbsp; NwnMdlComp also
+supports the recompilation of these ASCII models back into binary form.</p>
+<p><a href="http://www.torlack.com/nwnmdlcomp/nwnmdlcomp.zip">Click here to
+download NWNMDLCOMP</a></p>
+<h3>Why Should You Compile Your Models?</h3>
+<p>To be perfectly honest, there aren't any significantly compelling reasons to
+compile models into binary form.&nbsp; If you look in your override directory
+included with the game, most if not all of those models are in ASCII format.&nbsp;
+However, there are some good reasons to compile modes.</p>
+<p><i>Compiled models load faster.&nbsp; </i>Internally all models must be in
+binary form to be usable by the game.&nbsp; In the case of ASCII models, they
+are compiled &quot;on the fly&quot; by NWN as needed.</p>
+<p><i>Compiled models use less memory and fragment memory less.</i>&nbsp;
+Although Bioware might have taken steps to reduce the memory footprint of ASCII
+models compiled &quot;on the fly&quot;, I really question if they would have gone to all
+the trouble.&nbsp; If Bioware doesn't serialize the core model data in a
+compiled model into a single data buffer, then the compiled model would be
+scattered through out memory in many different regions of allocated memory.&nbsp;
+All these extra memory allocations do require memory overhead.&nbsp; (geek
+alert) Also, having parts of the model scattered throughout memory does increase
+the chance of page faults from either the free or modified page lists.&nbsp;
+Even worse, it could result in the dreaded hard fault. </p>
+<p><i>BUT</i> in all seriousness, I doubt either of these two points are serious
+enough to even raise a single hair on an eyebrow.&nbsp; Compiling your models
+should help performance.&nbsp; But don't expect your modules to suddenly start
+running like a bat out of hell.&nbsp; </p>
+<p><b>DO NOT</b> compile the ASCII models in the override directory to try to
+improve your game performance.&nbsp; It won't help and you might screw up the
+game.</p>
+<h3>Running NwnMdlComp</h3>
+<p>NwnMdlComp is a command line program.&nbsp; Thus, it doesn't have any fancy
+window interface.&nbsp; If you wish, you can copy &quot;nwnmdlcomp.exe&quot; into your
+window's directory.</p>
+<blockquote>
+  <pre>Usage:
+nwnmdlcomp [-cdxe] [-t#] infile [outfile]
+
+infile - name of the input file.
+outfile - name of the output file.
+-c - Compile the model (default)
+-d - Decompile the model (can't be used with -c)
+-x - Extract model from NWN data files (not done yet)
+-n - When compiling, don't remove empty faces
+-e - Disable appended extension mode. Only usable when an
+     output file name or path is specified or extracting
+     files from the NWN data files using -x.
+-t1 - Perform a decompilation test on all Bioware models
+-t2 - Perform a decomp/recomp test on all Bioware models (absolute)
+-t3 - Perform a decomp/recomp test on all Bioware models (relative)
+-t4 - Perform a decomp/recomp test on all Bioware models (smoothing)</pre>
+</blockquote>
+<p>NwnMdlComp supports two basic modes, compilation and decompilation.</p>
+<p>To convert a model from binary to ASCII, use the following command:</p>
+<pre>NWNMDLCOMP -d c_bugbeara</pre>
+<p>This assumes that there exists a file called &quot;c_bugbeara.mdl&quot; in the current
+directory.&nbsp; To convert a model stored in the Bioware data files to ASCII,
+add the &quot;-x&quot; option.</p>
+<pre>NWNMDLCOMP -dx c_bugbeara</pre>
+<p>In both these cases, a file called &quot;c_bugbeara.mdl.ascii&quot; will be created in
+the current directory.</p>
+<p>To compile an ASCII model, use the following command:</p>
+<pre>NWNMDLCOMP -c c_bugbeara</pre>
+<p>In this case, the file called &quot;c_bugbeara.mdl.ascii&quot; will be compiled and the
+results saved in the file &quot;c_bugbeara.mdl&quot;.</p>
+<p>If your ASCII model file doesn't end in &quot;.mdl.ascii&quot; then you will need to
+specify the extension of the model file.</p>
+<p>For example, let us say that your model editing program saves the ASCII model
+under the name &quot;mymodel.mdl&quot;.&nbsp; To compile the model, you would use the
+following command.</p>
+<pre>NWNMDLCOMP -c mymodel.mdl</pre>
+<p>In this case, the file &quot;mymodel.mdl&quot; will be compiled and the results saved
+as &quot;mymodel.mdl.bin&quot;.&nbsp; Please note that if the model doesn't end in &quot;.mdl.ascii&quot;,
+then &quot;.bin&quot; is appended to the input file name in order to create an output file
+name.&nbsp; The binary model will not be saved as &quot;mymodel.mdl&quot; to prevent the
+source file from being overwritten.&nbsp; However, if you wish to store your
+compiled models in another directory, you can do the following.</p>
+<pre>NWNMDLCOMP -c mymodel.mdl compiled/mymodel.mdl</pre>
+<p>This will create a file called &quot;mymodel.mdl&quot; in the &quot;compiled&quot; directory.&nbsp;
+The directory must already exist.</p>
+<h3>Using NwnMdlComp with Wildcards</h3>
+<p>NnwMdlComp supports the using of wildcards in the input file name. Standard
+wildcards such as &quot;*&quot; and &quot;?&quot; are fully supported.&nbsp;
+Wildcards can be used when compiling or decompiling models stored on disk or
+stored in the Bioware data files.</p>
+<pre>NWNMDLCOMP -dx *</pre>
+<p>This command will decompile all the models in the Bioware data files and
+store the output in the current directory.</p>
+<pre>NWNMDLCOMP -dx * ascii\</pre>
+<p>This command will decompile all the models in the Bioware data files and
+store them in the &quot;ascii&quot; subdirectory.&nbsp; Make sure this directory
+has been created.</p>
+<pre>NWNMDLCOMP -ce ascii\*.mdl binary\</pre>
+<p>This command will compile all the models in the subdirectory &quot;ascii&quot;
+and store the output in the &quot;binary&quot; subdirectory.&nbsp; Another
+command line option has also been specified.&nbsp; The &quot;e&quot; option will
+tell the model compiler to not use the normal extensions that are appended to
+the output file names.&nbsp; Thus, in this command example, if the ascii
+subdirectory contained a model called &quot;c_bugbear.mdl&quot;, then instead of
+the output being &quot;c_bugbear.mdl.bin&quot; in the binary subdirectory, the
+output would be &quot;c_bugbear.mdl&quot; in the binary subdirectory.&nbsp; This
+&quot;e&quot; option can also be used when extracting models from the Bioware
+data files.</p>
+<pre>NWNMDLCOMP -dxe *</pre>
+<p>This command will decompile all the Bioware models and store them in the
+current directory with the extension of &quot;.mdl&quot; instead of &quot;.mdl.ascii&quot;
+as it normally would.</p>
+<h3>NwnMdlComp Regression Tests</h3>
+<p>To help insure that NwnMdlComp actually works as advertised, it has a series
+of three regression tests that are run against all the binary models found in
+the NWN data files.</p>
+<p>The &quot;-t1&quot; regression tests performs a basic decompilation test of all the
+binary models. Success is only determined by the lack of the program crashing.</p>
+<p>The &quot;-t2&quot; regression test will decompile a model, then recompile the results,
+then decompile the recompilation.&nbsp; The results of the two decompilation
+phases are compared to see if they actually match.</p>
+<p>The &quot;-t3&quot; regression test will decompile a model, then recompile the results,
+generate internally the model output file, then decompile the recompilation.&nbsp;
+The results of the two decompilation phases are compared to see if they actually
+match.&nbsp; This is the strongest of all three tests since all phases of model
+compilation and decompilation are tested.</p>
+<p>The &quot;-t4&quot; regression test will perform the same tests as
+&quot;-t3&quot;.&nbsp; However, it will also include smoothing data.&nbsp; This
+test is known to generate errors.</p>
+<h3>Program Limitations</h3>
+<p>Compiler Limitations:</p>
+<ul>
+  <li>None.</li>
+</ul>
+<p>Decompiler Limitations:</p>
+<ul>
+  <li>Vertex smoothing isn't perfect, but it works for over 96% of the models.</li>
+</ul>
+<h3>Updates - 08/31/2002</h3>
+<ul>
+  <li>The decompiler now supports smoothing masks</li>
+  <li>The decompiler now supports skin weights</li>
+  <li>The compiler now supports skin weights</li>
+  <li>The compiler now supports bumpmap texture animations</li>
+  <li>A crash after -t1 has been corrected.</li>
+</ul>
+<h3>Updates - 08/31/2002 - Part 2</h3>
+<ul>
+  <li>
+<p>Added support for wildcards</p>
+  </li>
+</ul>
+<h3>Updates - 09/1/2002</h3>
+<ul>
+  <li>Compiler now supports compiling of supermodels when required</li>
+  <li>Compiler will now load supermodels and texture information files from the
+    current directory prior to trying the Bioware data files.</li>
+</ul>
+<h3>Updates - 2/12/2003</h3>
+<ul>
+  <li>Compiler now supports 1.28 beta 1 patch.</li>
+</ul>
+<h3>Updates - 7/1/2003</h3>
+<ul>
+  <li>The compiler now supports SoU.</li>
+</ul>
+<h3>Credits</h3>
+<p>Revinor's work at <a href="http://nwn-j3d.sourceforge.net/">
+http://nwn-j3d.sourceforge.net/</a> an invaluable starting and reference point
+for my own work.</p>
+
+</body>
+
+</html>

@@ -1,0 +1,3 @@
+usage: Process source dest
+  source = source folder
+  dest = destination folder

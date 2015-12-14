@@ -1,0 +1,439 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for Windows (vers 13 April 2006), see www.w3.org">
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=us-ascii">
+
+  <title>CM3 README</title>
+  <meta name="GENERATOR" content="OpenOffice.org 2.2 (Win32)">
+  <meta name="AUTHOR" content="OldMansBeard">
+  <meta name="CREATED" content="20070913;15352815">
+  <meta name="CHANGEDBY" content="Robert Minors">
+  <meta name="CHANGED" content="20070913;17474542">
+  <style type="text/css">
+<!--
+                @page { size: 8.27in 11.69in }
+        -->
+  </style>
+  <style type="text/css">
+  p.c4 {margin-bottom: 0in}
+  p.c3 {text-align: center}
+  h3.c2 {text-align: center}
+  h1.c1 {text-align: center}
+  </style>
+</head>
+
+<body lang="en-GB" dir="ltr">
+  <h1 class="c1">CleanModels 3</h1>
+
+  <h3 class="c2">Version 3.1.1</h3>
+
+  <p class="c3">2007-10-31</p>
+
+  <p class="c3">&copy; OldMansBeard 2006, 2007</p>
+
+  <h3>What this package does</h3>
+
+  <p>CleanModels 3 is a stand-alone program for detecting and repairing some commonplace faults in NWN tileset models. It works on uncompiled (ascii) models. It imports the models from a folder you specify, checks for about forty known types of fault, fixes those it can fix and exports the fixed models into an output folder. At the same time, it writes log files in the output folder listing all the faults it has identified, the fixes it has done and things that remain unfixed.</p>
+
+  <p>If there are any *_edge.2da files in the import folder, the program will read them to determine which tiles are edge tiles.</p>
+
+  <p>When it exports a fixed model, it also exports a fixed .wok file (unless it is an edge tile). The walkmesh aabb data is rebuilt using a similar algorithm to the one in Joco's NWmax, that is in turn based on the Bioware one.</p>
+
+  <p>The program is meant to be used in addition to all the other ways of checking and fixing tile models. It does not replace the sanity checks in NWmax nor the time-honoured procedure of running the models through nwnmdlcomp to see if they break. It checks for things that they do not do. It does not do anything that cannot be done manually; it just does it a lot faster and more reliably, thereby saving you time and trouble. See below for a detailed list of the things it checks and fixes.</p>
+
+  <h3>Installation</h3>
+
+  <p>Copy cleanmodels311.exe and the five .dll files to a convenient folder. Those five .dll files need to stay with the .exe. That's all you need to do to install it.</p>
+
+  <p>The program is written in SWI-Prolog (available free from www.swi-prolog.org) but is packaged as a stand-alone executable. The five dll files are a part of the SWI-Prolog package that can be redistributed freely with applications such as this.</p>
+
+  <p>Note that, if you are updating from Beta Version 1.1 of this program, you must use the five dll files from the updated package - the executable will not work with the older dll's.</p>
+
+  <h3>Running the program</h3>
+
+  <p>Double-click the .exe.</p>
+
+  <p>Two windows will open. One is a console window and the other is a GUI panel.</p>
+
+  <p>The GUI allows you to specify the input and output directories, a filename pattern, names for two log files and some other options. The first time you run the program they will have default values that you will want to change. After that, each time you run the program it will offer the values you used last time, as a starting point.</p>
+
+  <p>If the output directory you specify does not exist, it will be created. It is unwise to set the output directory to be the same as the input because your original models will be over-written but the program will not prevent you doing it, if that's what you want to do.</p>
+
+  <p>Changing the filename pattern allows you to focus on part of a tileset or just a few models at a time it you want to. Wildcards work in the usual way. For example, setting it to tcxy0_a*.mdl would just process files in the "a" series in that set.</p>
+
+  <p>The first log file will record details of all the faults the program has identified and all the fixes it has done. It may be quite long but it is there so that you can see what kinds of faults the tileset had in it, that needed fixing. The second log file is a summary that only lists the remaining, unfixed faults that will need to be investigated and repaired manually. Serious errors that prevented a tile being exported at all are flagged in the summary file with "****" so that they can be found quickly.</p>
+
+  <p>When you click OK the GUI will disappear, the program will start running and a trace of what it is doing will appear in the other window. It will probably scroll past faster than you can read it - don't worry, it is all being copied into the detailed log file.</p>
+
+  <p>If the GUI does not disappear when you click OK, it probably means that you have specified an input directory that does not exist. Check and try again.</p>
+
+  <p>When the program finishes it will wait for you to hit the ENTER key before it closes the console window.</p>
+
+  <p>On a large tileset with many faults it may take several hours to complete but you can see how it is progressing because it processes the models in the input directory in alphabetical order. If you are cleaning up a raw tileset, don't be surprised if you see a lot of tverts being welded or deleted. This is a relatively slow process - a few thousand fixes a minute is about the best it will do.</p>
+
+  <p>If a tile model is very corrupt, it is possible for the import to hang. If this happens, note the last model file that is listed as having been exported and take a hard look inside the next one in alphabetical order. There's something very wrong with it.</p>
+
+  <p>If you want to kill the program abruptly, there are two ways. One is to type CTRL-C to interrupt it and then "e" to exit. The other way is just to click the [X] button on the window but you need to know that you have to click it twice. If you kill the program while it is exporting a model, that file may be incomplete and the last parts of the log files may not be written.</p>
+
+  <p>There are some menus along the top of the console window. Ignore them. They mostly won't do anything useful but I haven't worked out how to stop them appearing.</p>
+
+  <p>The program is quite demanding of processor power. If you find that you need to leave it running for a long time and you want to be able to use your computer for other things in the meantime, try this: open the Windows task manager, find the task cleanmodels311.exe, right click and set its priority to "below normal". It will continue to run at much the same speed, but your other applications will respond more normally. You would need to do this every time you run the program (Windows won't remember the setting).</p>
+
+  <h3>Checks and Fixes</h3>
+
+  <p><u>The following conditions are pre-requisite</u></p>
+
+  <p>If a tile fails any of these, checking will continue but the model will not be exported and will need to be fixed manually before trying again.</p>
+
+  <ol>
+    <li>
+      <p class="c4">The file must contain a tile model with the same name as the file.</p>
+    </li>
+
+    <li>
+      <p class="c4">The model must contain exactly one dummy node (the Aurora Base) with the same name as the model.</p>
+    </li>
+
+    <li>
+      <p class="c4">The Aurora Base must not be offset from the zero position or rotated.</p>
+    </li>
+
+    <li>
+      <p class="c4">The node hierarchy within the model must not be broken. Every node below the Aurora base must have exactly one parent.</p>
+    </li>
+
+    <li>
+      <p class="c4">If there are danglymesh nodes, they must have the right number of constraints.</p>
+    </li>
+
+    <li>
+      <p class="c4">There must not be more than two main lights and three source lights.</p>
+    </li>
+
+    <li>
+      <p class="c4">There must not be more than one walkmesh in the tile.</p>
+    </li>
+
+    <li>
+      <p class="c4">The walkmesh geometry must not have unrepairable colliding faces that prevent the aabb data being built.</p>
+    </li>
+  </ol>
+
+  <p><u>The following conditions are checked and fixed automatically if necessary</u></p>
+
+  <ol>
+    <li>
+      <p class="c4">The Aurora Base exists and has parent NULL but has no other parameters and no animation keys.</p>
+    </li>
+
+    <li>
+      <p class="c4">Edge tiles have no walkmeshes, lights, emitters or animations.</p>
+    </li>
+
+    <li>
+      <p class="c4">The 'a' node exists if it needs to, is correctly named for its tile, is parented directly to the Aurora Base, has position 0 0 0, orientation 0 0 0 0 and has no animation keys of its own.</p>
+    </li>
+
+    <li>
+      <p class="c4">Emitters descend from the 'a' node.</p>
+    </li>
+
+    <li>
+      <p class="c4">Main lights and source lights are parented directly to the Aurora Base, are correctly named for the tile, have distinct numbers in the allowed ranges and have no animation keys.</p>
+    </li>
+
+    <li>
+      <p class="c4">'D' and 'U' dummies are correctly named for the tile and have distinct numbers in the allowed ranges.</p>
+    </li>
+
+    <li>
+      <p class="c4">The walkmesh (if present) is parented directly to the Aurora Base, centred and snapped to the tile edges, has no animation keys and has a null bitmap and no tverts.</p>
+    </li>
+
+    <li>
+      <p class="c4">Main lights, source lights and walkmeshes have no child nodes. If they do, the child nodes will be moved onto newly-created dummy nodes in the same position.</p>
+    </li>
+
+    <li>
+      <p class="c4">Every node has a distinct name. Name clashes will be resolved, if possible, by adding numerical suffixes. This is not attempted if the duplicated nodes have child nodes (because the child nodes' parents would be ambiguous) or animation keys (because the keys might or might not apply to both).</p>
+    </li>
+
+    <li>
+      <p class="c4">Trimesh nodes with no faces are redefined as dummy nodes if they have descendants, otherwise they are deleted. Dummy nodes (other than 'U' and 'D' nodes) that have no descendants are likewise deleted.</p>
+    </li>
+
+    <li>
+      <p class="c4">Duplicate animations are combined and have their keys merged.</p>
+    </li>
+
+    <li>
+      <p class="c4">Animations are animrooted to the Aurora Base and have their lengths and transtimes defined. If not, a default length of 0 and transtime of 0.25 will be added.</p>
+    </li>
+
+    <li>
+      <p class="c4">Animations should only try to change parameters that can actually be animated (any extraneous parameters will be deleted).</p>
+    </li>
+
+    <li>
+      <p class="c4">If an imported tile model has fixed parameter values in animations (which is acceptable to the NWN engine) they will nevertheless be converted to the corresponding keys so that they will not be lost if the tile is subsequently re-imported into NWMax. If an animated node has both keys and a fixed value for the same parameter in the same animation, the fixed value will be ignored and the keys used.</p>
+    </li>
+
+    <li>
+      <p class="c4">Emitters (other than lightning emitters) should be correctly turned on/off by animations. If necessary, they will have birthratekeys of 0 added to a tiledefault or default animation and non-zero birthratekeys, derived from the value defined in the geometry, inserted into an animloop animation.</p>
+    </li>
+
+    <li>
+      <p class="c4">Lightning emitters are not animated (because turning them off and on again can cause toolset crashes) and if they have birthratekeys, those keys will be deleted.</p>
+    </li>
+
+    <li>
+      <p class="c4">If a node (other than an emitter) has animation keys for a particular parameter but none of the keys actually changes that parameter from the value defined in the geometry, all of those keys will be deleted.</p>
+    </li>
+
+    <li>
+      <p class="c4">Except for emitter birthratekeys, if animloop animations have keys that change a particular parameter away from the value defined in the geometry, the tiledefault or default animation must restore it. Keys will be added or corrected if necessary to enforce this.</p>
+    </li>
+
+    <li>
+      <p class="c4">If an animloop03 animation exists but animloop02 does not, an empty animloop02 will be created. Likewise, if animloop02 exists but animloop01 does not, an empty animloop01 will be created.</p>
+    </li>
+
+    <li>
+      <p class="c4">If any non-empty day, night, night2day or day2night animations exist, CM3 will ensure that all four exist by creating empty ones if necessary. If some exist but they are all empty, however, the whole group will be deleted together.</p>
+    </li>
+
+    <li>
+      <p class="c4">Otherwise, empty animations that have no remaining useful keys will be deleted.</p>
+    </li>
+
+    <li>
+      <p class="c4">If a day2night or night2day has a length less than 1 frame (0.0333333), its length will increased to that minimum value.</p>
+    </li> 
+
+    <li>
+      <p class="c4">Missing end keys (for the time equal to the length of the animation) are fixed to keep the compiler happy. They are looped back to time zero in animloops otherwise they are equated to the last value given.</p>
+    </li>
+
+    <li>
+      <p class="c4">Nodes that have valid animation keys are re-parented if necessary to descend from the 'a' node.</p>
+    </li>
+
+    <li>
+      <p class="c4">Unrendered nodes should have NULL bitmaps and no tverts except that shadow meshes have their bitmaps set to 'black'. Rendered nodes that have NULL or missing bitmaps or bitmaps equal to their node names are also set to bitmap 'black'.</p>
+    </li>
+
+    <li>
+      <p class="c4">Black objects have ambient/diffuse set to 0 0 0. Optionally (set in the GUI), non-black objects can be forced to ambient/diffuse 1 1 1.</p>
+    </li>
+
+    <li>
+      <p class="c4">In trimesh, aabb and danglymesh nodes, after possible snapping (as selected in the GUI), co-incident mesh vertices are welded. Null and duplicate faces are then deleted followed by any unused vertices.</p>
+    </li>
+
+    <li>
+      <p class="c4">After possible snapping (as selected in the GUI), tverts are welded (except in animmesh nodes), UVW normalized relative to the origin and unused ones deleted.</p>
+    </li>
+
+    <li>
+      <p class="c4">Walkmeshes have inverted and degenerate faces deleted and (optionally) undercut faces repaired if possible before the aabb data is rebuilt.</p>
+    </li>
+  </ol>
+
+  <p><u>Warnings</u></p>
+
+  <p>The following conditions are detected and a warning issued but no attempt to fix them is made. They should be checked manually.</p>
+
+  <ol>
+    <li>
+      <p class="c4">Emitters with null or missing textures (may be wrong)</p>
+    </li>
+
+    <li>
+      <p class="c4">Lights with null or missing texturenames (may be wrong)</p>
+    </li>
+
+    <li>
+      <p class="c4">Lensflares with wrong numbers of parameters</p>
+    </li>
+
+    <li>
+      <p class="c4">Trimeshes that cannot be repivoted</p>
+    </li>
+
+    <li>
+      <p class="c4">Nodes (other than dummy nodes) with centroids outside the tile</p>
+    </li>
+
+    <li>
+      <p>Walkmeshes that project outside their tile boundaries</p>
+    </li>
+  </ol>
+
+  <h3>Notes on the Snap Option</h3>
+
+  <p>In the GUI, there is a radio button for "Snap" with options "Binary", "Decimal" and "None". The default is whatever you used, last time you ran the program.</p>
+
+  <p>If you choose "Binary", all mesh vertices and positions will be snapped to exact multiples of 1/128 metres (0.0078125) and exported to 7 decimal places. The ascii value exported will exactly represent the binary one and, whether you import the resulting tile into NWN or nwnmdlcomp or Gmax or back into CleanModels 3, the binary value inside that program will exactly correspond to it. So there is no loss of precision.</p>
+
+  <p>If you choose "Decimal", vertices and positions will be snapped to multiples of 0.01 metres and exported values will use only as many decimal places as necessary (thus saving characters in the ascii file).</p>
+
+  <p>The "Decimal" style corresponds to the behaviour of Gmax and NWmax. Although they work in binary floats internally, they can't export in binary precision. (Even if you select the "compile exported model" option, nwmax exports it in ascii first, discarding the precision, and then compiles it from that).</p>
+
+  <p>Which one is best, really depends on what you are going to do with the exported tiles. If you are going to load them straight into NWN or run them through nwnmdlcomp, binary precision is best. If you are going to re-import them into Gmax, you might as well use decimal precision (and save a few bytes of file size) because that is all you will get back out again anyway.</p>
+
+  <p>You should use the same precision across an entire tileset, otherwise you may get geometry mismatches between one tile and its neighbours in an area.</p>
+
+  <p>Snapping is done after orientations are reset and before repivoting. Vertices are held fixed in absolute position while node positions are snapped, then they themselves are snapped.</p>
+
+  <p>Note a change introduced in Beta 1.2 : snapping is not now applied to the positions of the parents of animmesh nodes, nor to the parents of nodes which have animated positions or positionkeys.</p>
+
+  <h3>Notes on Pivot Checking and Fixing</h3>
+
+  <p>Bad pivots are one of the causes of shadow errors in tiles. The pivot of a mesh is regarded as "bad" if the mesh has any faces whose outward normals are directed towards the pivot rather than away from it.</p>
+
+  <p>Unless you set the Repivot option to "none" in the GUI, the program checks the pivots of all trimesh nodes that are set to shadow 1. If the program finds a bad pivot, it will try to fix it by moving the pivot to a position inside the mesh where it is no longer "bad". If it succeeds, it will say so in the detailed log. However, this is not always possible. A common example is a door frame or window frame where the sides are facing each other inwards. Wherever you put the pivot, it would be in front of at least one of the sides Often, these situations can be resolved by splitting the mesh into suitable pieces, each of which can be successfully pivoted. There is an option to allow the program to try to do this automatically for you.</p>
+
+  <p>The program will not attempt to repivot a node whose position or orientation is changed in an animation.</p>
+
+  <p>The program will not move a pivot to a position outside the XY boundaries of the tile. If it cannot find a place for the pivot within these limits, it will not move it.</p>
+
+  <p>The program will first compute the centroid of the centroids of the faces of the object, and test to see if that would be a satisfactory pivot. If it is, it will use it. Otherwise, it will compute the polyhedron within which the pivot must lie. If that polyhedron is convex it will use the centre of its bounding box as a pivot.</p>
+
+  <p>If snap is being used, the new position of the pivot will be snapped if possible. Sometimes, if the pivoting is critical, this is not possible. For example, if the program has calculated that the only possible position for a pivot is between 1.234 and 1.235, snapping it to 1.23 is not going to work. In this case, the pivot will be set to 1.2345 and the vertex co-ordinates, which are expressed relative to the pivot, will be released so that their absolute positions (relative to the rest of the tile geometry) can remain exact.</p>
+
+  <p>If you set the Repivot option to "all", the program will repivot nodes to conform to its own algorithms, even if their existing position is not actually "bad". This may be useful on a first pass through a raw tileset.</p>
+
+  <p>The memory needed to find the bounding polyhedron increases as the third power of the number of faces. For trimesh nodes of up to 150 faces, the program will use an exact algorithm that will certainly succeed in fixing the pivot if it is geometrically possible. Beyond 150 faces and up to 400 faces it will use a looser algorithm that is less memory-intensive and will usually succeed (about 99% of the time) but may occasionally fail. Beyond 400 faces it will not even try.</p>
+
+  <p>Occasionally, repositioning a difficult pivot may be achieved by exploiting rounding errors in the calculation of very small distances and the pivot may be placed the "wrong side" of a face by a microscopic distance. If this happens, a warning will be printed in the detailed log file.</p>
+
+  <p>If you turn on the "splitting" option, when the program fails to find a satisfactory pivot position for an object, it will split the object into parts that can each be pivoted separately. It creates new names for the parts by adding suffix numbers to the original node name (having checked that they are not already in use) and it randomises the wirecolors of the new objects. If it fails to repivot one of the parts (which can happen with a really twisted geometry) it will set its wirecolor to red (1 0 0).</p>
+
+  <p>When splitting an object, the program first separates isolated objects that are not connected to each other by common edges. If that isn't enough, it tries splitting objects into distinct smoothing group. Then it tries detaching pieces of floor and anything below them. After that, it looks for pieces that are entirely convex or entirely concave and detaches those. Finally it looks for groups of faces that form plane polygons. When it separates a piece, it checks to see if that piece and the remaining part can be pivoted. If they can, it need go no further. Otherwise, it will try splitting them again in another way.</p>
+
+  <p>There are some options in the GUI to control the splitting process. You can tell it to use smoothing groups, as described above, or to totally ignore them (if you think the tiles are not well smoothed anyway) or to protect smoothing groups and not allow them to be split further even if the pivot is still bad.</p>
+
+  <p>There is also a spinner to set the minimum size (number of faces) of pieces after splitting. Setting it to 4 is often a good choice but you might need to try different values on problematic tiles.</p>
+
+  <p>Usually, it works better for concave pieces to be identified before convex ones. For some geometries, however, it may be better to do it the other way around. The radio button in the GUI lets you to choose which way you want the program to do it. If you find a particular tile is problematic and the program seems to generate a large number of pieces which it can't repivot, try changing this option and running the original file through the program again.</p>
+
+  <p>Note a change introduced in Beta 1.5 : when splitting shadow meshes (trimesh nodes set to render 0 shadow 1), the option to protect smoothing groups is ignored for that node (because smoothing is meaningless if the node is not rendered) and the minimum piece size of 2 is used, regardless of GUI options. This is so that, if a node is so convoluted that it cannot be pivoted without breaking smoothing, you can try creating a shadow mesh for it that can be repivoted.</p>
+
+  <p>Another change introduced in Beta 1.5 : if a trimesh node cannot be successfully repivoted, even with splitting, the pivot is moved to the centroid of the bottom-most vertices of the mesh. This quite often, but not always, resolves remaining shadow errors but a warning is still printed in the log because visual inspection of the shadows on the tile will still be needed.</p>
+
+  <h3>Notes on Walkmesh Overhangs</h3>
+
+  <p>There is an option in the GUI to "Repair Walkmesh Overhangs". If you enable it, the program will attempt to adjust walkmesh vertices horizontally to remove tucks and folds and re-align overhanging faces to have positive slopes. It will typically succeed in about 90% of cases but sometimes the mesh may be too badly twisted for it to know what to do and you will get a warning that the walkmesh still has mis-oriented faces. This feature should be regarded as still somewhat experimental and if you do use this option, you are advised to check the walkmesh visually afterwards in case it has been distorted inappropriately.</p>
+
+  <p>When repairing overhangs, the program straightens any zigzag lines of vertices down tile edges first, before adjusting interior vertices. It will straighten identical zigzigs in identical ways on all tiles so that if the walkmesh was continuous across certain tile boundaries before the repairs, it will still be continuous afterwards. This continuity may be lost, however, if not all tiles in the tileset are processed or if the meshing of the tile edges was already inconsistent. In such cases, the "Interior only" option should be used. This will ensure that tile-edge vertices are not moved at all. This may mean that fewer face overhangs can be repaired by the program and more work will have to be done by hand-crafting, but it does avoid the risk of causing disjunctions in the walkmesh between tiles that had not been present before.</p>
+
+  <p>When reporting inverted aabb faces that it could not fix, the program lists their face numbers. Note that faces in NWN are numbered from zero. If you look for those faces in GMax, you have to add 1 because GMax numbers faces from 1. Inverted faces are sometimes very small or hidden behind other faces and hard to see, so this may help to track them down.</p>
+
+  <h3>Notes on the Water Fixup Options</h3>
+
+  <p>An option to "Apply Water Fixups" was introduced in Beta 1.5. The program recognises water surfaces by their bitmap names. It has some Bioware texture names built-in but it will also look for a special substring (the "key") in every bitmap name. By default the key is "water" and this works for most tilesets but you can change this in the GUI if your tileset uses some other convention. There are two sub-options:</p>
+
+  <p>(1) The "Dynamic Water" sub-option means that you want the program to ensure that water surfaces descend from the tile's 'a' node. The program will create the 'a' node if it needs to and move water meshes up and across the hierarchy as appropriate. You should enable this option if there is walkable water (such as stream and pools) in the tileset. Note, however, that this fix will only be applied to trimesh nodes, not animmesh nodes, and will not be applied to edge tiles.</p>
+
+  <p>(2) When water connects across tile boundaries, it tends to look better if the bitmap keeps the same compass orientation regardless of rotations of the tiles. You can achieve this by setting rotatetexture to 1 on all the water surface meshes. The program can do this for you automatically if you wish. Otherwise, you can set it to 0 (not recommended) or leave it alone.</p>
+
+  <p>The dynamic water sub-option can also be used to force nodes rendered with other semi-transparent bitmaps to the 'a' node. For example, if the key is set to "treefol", it will catch the leafy umbrellas of trees in most tilesets.</p>
+
+  <h3>Notes on importing</h3>
+
+  <ul>
+    <li>
+      <p class="c4">#comments are discarded.</p>
+    </li>
+
+    <li>
+      <p class="c4">Spurious tokens at the ends of data lines are tolerated but ignored.</p>
+    </li>
+
+    <li>
+      <p class="c4">Embedded spaces in node names are removed.</p>
+    </li>
+
+    <li>
+      <p class="c4">The filedependency is reset to "Unknown".</p>
+    </li>
+
+    <li>
+      <p class="c4">Mis-spelt parameters are interpreted if possible. e.g 'sahdow' is understood as 'shadow', 'coclor' as 'color' and the widespread 'setfillumcolor' as 'selfillumcolor'. "n_Dynamic_Type" is understood to mean "nDynamicType".</p>
+    </li>
+
+    <li>
+      <p class="c4">Parameters that are not relevant to the current node are discarded, e.g. danglymesh tightness on a trimesh node.</p>
+    </li>
+
+    <li>
+      <p class="c4">In animations, empty lists of keys are discarded, as are references to nodes that were not defined in the geometry.</p>
+    </li>
+
+    <li>
+      <p class="c4">In animations for animmesh nodes, repeated verts, faces and tverts are discarded.</p>
+    </li>
+
+    <li>
+      <p class="c4">Orthogonal orientations are snapped to exact multiples of &pi;/2. The snap zone is &plusmn;0.9 degrees.</p>
+    </li>
+
+    <li>
+      <p class="c4">If a parameter is defined more than once, the last value is taken and the preceding ones are ignored.</p>
+    </li>
+
+    <li>
+      <p class="c4">If a line is not understood at all it is printed out and the loading continues but the file is flagged as "load failed".</p>
+    </li>
+
+    <li>
+      <p>Spurious lines at the end of the file after the "donemodel" line are ignored but a warning is printed in the log.</p>
+    </li>
+  </ul>
+
+  <h3>Notes on exporting</h3>
+
+  <ul>
+    <li>
+      <p class="c4">Minimal comments are added.</p>
+    </li>
+
+    <li>
+      <p class="c4">setanimationscale is set to 1 if not defined otherwise.</p>
+    </li>
+
+    <li>
+      <p class="c4">Nodes are output in depth-first order descending from the NULL parent.</p>
+    </li>
+
+    <li>
+      <p class="c4">Emitter parameter names are output in "camel" capitalisation, e.g. colorStart, alphaEnd.</p>
+    </li>
+
+    <li>
+      <p class="c4">The aabb data in walkmesh nodes is rebuilt. Multimaterial lists on walkmesh nodes are discarded.</p>
+    </li>
+
+    <li>
+      <p class="c4">In animmesh node animations the verts, faces and tverts, taken from the modelgeom data, are repeated before the animvert and animtvert data.</p>
+    </li>
+
+    <li>
+      <p class="c4">If binary precision is chosen, floating-point numbers are output to 7 decimal places.</p>
+    </li>
+
+    <li>
+      <p>If decimal precision is chosen, floats are output in short form with up 6 significant figures.</p>
+    </li>
+  </ul>
+  <hr>
+
+  <address>
+    &copy; OldMansBeard 2006, 2007<br>
+    Last Revised 2007-10-31
+  </address>
+  <hr>
+</body>
+</html>

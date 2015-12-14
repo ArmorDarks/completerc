@@ -1,0 +1,17 @@
+- Unrar this archive into a folder.
+
+- Put MDL files in the "in" folder"
+
+- Run "NWN Carottes.exe"
+
+- For compile MDL to BIN MDL, write "nwnmdlcomp -c" in "program to execute". Validate and start the process.
+
+- For decompile MDL to ASCII MDL, write "nwnmdlcomp -d" in "program to execute". Validate and click "Executer" for launch the process.
+
+- For replace text by another in all the MDL, click on "Moulinette de texte". Then indicate the search and the replacement. Validate. You can see the content of the first file in the folder for verification. When ready and OK, click "Executer" for launch the process.
+
+- Enjoy ! :)
+
+- For more help, reply in NWvault.
+
+- You can go to AdT web site : http://aventuriersdetroy.free.fr
