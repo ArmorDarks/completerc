@@ -1,3 +1,5 @@
+![](https://raw.githubusercontent.com/ArmorDarks/completerc/master/previews/v08%20ingame%20screen%20-%201.jpg)
+
 Complete Rural\City — Neverwinter Nights hakpack
 =================================================
 
