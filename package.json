@@ -1,0 +1,28 @@
+{
+  "name": "completerc",
+  "version": "0.985",
+  "description": "Massive 2300+ tileset for building rural, city, exterior and interior castle areas",
+  "homepage": "https://github.com/ArmorDarks/completerc",
+  "author": "Serj Lavrin (https://github.com/ArmorDarks)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ArmorDarks/completerc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ArmorDarks/completerc/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "nwn",
+    "hakpack",
+    "rural",
+    "city",
+    "castle",
+    "interior",
+    "exterior",
+    "tileset"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {}
+}
