@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0] — 2015-12-17
+First stable release. There is _no changes_ in actual hakpacks. It's just maintenance update.
+
+* Start using [semantic versioning](http://semver.org/)
+* Repacked content
+* Included simpler hills in release as optional hackpack
+
 ## Simpler hills replacement — optional hak
 * Added simpler hills replacement pack as optional hak
 
