@@ -138,7 +138,7 @@ As was said above, original hills from Complete Rural\City, that were made by Ze
 
 Zeon's hills are much more realistic, more natural than Wayland Hills. Besides, they have advanced tiles for road, so you can place road anywhere on Zeon hills and it will look natural. However, not all people can stand shadow bugs they causing. And I'm no exception.
 
-Since there are people that prefer to use more natural looking hills desipte shadow bugs, compromise was needed to solve that problem. So? I've made optional hakpack.
+Since there are people that prefer to use more natural looking hills despite shadow bugs, compromise was needed to solve that problem. So? I've made optional hakpack.
 
 `Simpler hills replacement pack` contains Wayland Hills and will override hills of core CompleteRC hak. It _DOES NOT_ affect set file at all - only `mdl`s and `wok`s.
 
