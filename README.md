@@ -124,7 +124,7 @@ Here are few screenshots with bug:
 Unfortunately I don't know how to fix it. Guys from CTP said that bug caused by too complex mesh.
 
 For this moment there are only few solutions
-  * Вon't use `Hills` terrain
+  * Don't use `Hills` terrain
   * Switch off shadows.
   * Use optional **simpler hills replacement pack**, described below.
 
