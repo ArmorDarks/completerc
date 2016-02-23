@@ -62,3 +62,5 @@ First stable release. There is _no changes_ in actual hakpacks. It's just mainte
 
 ## 0.8
 * Initial version
+
+[1.0.0]: https://github.com/ArmorDarks/completerc/releases/tag/1.0.0
